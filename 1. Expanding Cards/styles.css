@@ -1,5 +1,47 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 80vh;
+}
+
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    margin: 5px;
+    position: relative;
+    flex: 0.5;
+    transition: flex 0.7s ease-in;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel > h3 {
+    opacity: 0;
+    color: white;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;   
+}
+
+.panel.active > h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4;
 }
